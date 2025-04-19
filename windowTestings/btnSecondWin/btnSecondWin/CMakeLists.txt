@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Quick)
 
+
 qt_standard_project_setup(REQUIRES 6.8)
 
 qt_add_executable(appbtnSecondWin
@@ -16,8 +17,11 @@ qt_add_qml_module(appbtnSecondWin
     URI btnSecondWin
     VERSION 1.0
     QML_FILES
-        Main.qml
-)
+        guis/main/Main.qml
+        guis/gui_2/gui_2.qml
+        SOURCES
+        backend.h backend.cpp
+        )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
