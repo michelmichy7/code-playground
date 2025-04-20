@@ -1,6 +1,7 @@
 import QtQuick 2.6
 import QtQuick.Controls 2.15
-import QtQuick.Controls.Material 2.15
+import QtQuick.Controls.Material
+import btnSecondWin 1.0
 
 Window {
     width: 350
@@ -9,12 +10,16 @@ Window {
     title: qsTr("Hello World")
     color: "darkslategrey"
 
+    Backend {
+        id: backend
+    }
+
     Button {
         text: "Go to the next Window"
         anchors.centerIn: parent
         Material.background: "darkblue"
         Material.foreground: "White"
         onClicked:
-            myHandler.qDebug()
+            backend.connect_gui1()
     }
 }

@@ -1,8 +1,5 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#include "backend.h";
-
-
 
 int main(int argc, char *argv[])
 {
@@ -14,8 +11,8 @@ int main(int argc, char *argv[])
         &QQmlApplicationEngine::objectCreationFailed,
         &app,
         []() { QCoreApplication::exit(-1); },
-
         Qt::QueuedConnection);
-    engine.loadFromModule("btnSecondWin", "Main");
+    engine.loadFromModule("WindowTesting2T", "Main");
+
     return app.exec();
 }

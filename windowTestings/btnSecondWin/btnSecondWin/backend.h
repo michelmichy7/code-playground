@@ -2,19 +2,18 @@
 #define BACKEND_H
 
 #include <QObject>
-#include <QQmlEngine>
+#include <QQmlApplicationEngine>
 
 class Backend : public QObject
 {
     Q_OBJECT
     QML_ELEMENT
 public:
-    explicit Backend(QObject *parent = nullptr);
-    Q_INVOKABLE void generateNumber(int min, int max);
+    explicit Backend(QQmlApplicationEngine *engine, QObject *parent = nullptr);
+    Q_INVOKABLE void connect_gui1();
 
-signals:
-    void numberEmitted(int num);
-
+private:
+    QQmlApplicationEngine *m_engine;
 };
 
 #endif // BACKEND_H
