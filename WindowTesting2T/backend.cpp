@@ -5,7 +5,7 @@ Backend::Backend(QObject *parent)
     : QObject{parent}
 {}
 
-void Backend::ChangeIt()
+void Backend::handleInput(const QString &text)
 {
-
+    qDebug() << "I'm being called!";
 }
