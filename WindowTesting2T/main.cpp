@@ -12,16 +12,20 @@ int main(int argc, char *argv[])
 
     Backend testClass;
 
+    QQmlContext * rootContext = engine.rootContext();
+    rootContext->setContextProperty("backend", &testClass);
+
     QObject::connect(
         &engine,
         &QQmlApplicationEngine::objectCreationFailed,
         &app,
         []() { QCoreApplication::exit(-1); },
         Qt::QueuedConnection);
-    engine.loadFromModule("WindowTesting2T", "Main");
 
-    QQmlContext * rootContext = engine.rootContext();
-    rootContext->setContextProperty("backend", &testClass);
+        engine.loadFromModule("WindowTesting2T", "Main");
+
+
+
 
     return app.exec();
 }

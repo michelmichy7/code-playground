@@ -1,5 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
+import QtQuick.Controls.FluentWinUI3
 
 Window {
     width: 640
@@ -7,7 +8,7 @@ Window {
     visible: true
     title: qsTr("Hello World")
 
-    color: "darkslategrey"
+    color: "#1A1A1A"
 
     Column {
         anchors.centerIn: parent
@@ -21,8 +22,25 @@ Window {
 
         Button {
             text: "Submit"
+            anchors.horizontalCenter: parent.horizontalCenter
+
+            onClicked: {
+
+            backend.handleInput(userInput.text);
+        }
+        Text {
+            id: outputLabel
+            color: "white"
             anchors.horizontalCenter: userInput.horizontalCenter
-            onClicked: backend.handleInput(userInput.text)
+            text: ""
+        }
+
+        Connections {
+            target: backend
+            function onSendResponse(respond) {
+                outputLabel.text = respond;
         }
     }
+}
+}
 }

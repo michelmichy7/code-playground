@@ -10,7 +10,8 @@ public:
     explicit Backend(QObject *parent = nullptr);
 
     Q_INVOKABLE void handleInput(const QString &text);
-
+signals:
+    void sendResponse(const QString &response);
 };
 
 #endif // BACKEND_H
