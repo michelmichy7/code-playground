@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int main() {
+void mngFun() {
 
     deque<string> names = {"Janko", "Anicka", "Marta"};
 
@@ -18,3 +18,4 @@ int main() {
 
     
 }
+

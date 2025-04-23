@@ -8,11 +8,12 @@ class backend : public QObject
     Q_OBJECT
 public:
     explicit backend(QObject *parent = nullptr);
+    void mngFun();
 
 signals:
 
 public slots:
-    void mngFun();
+
 };
 
 #endif // BACKEND_H
