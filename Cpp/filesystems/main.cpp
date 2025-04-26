@@ -6,12 +6,14 @@ using namespace std;
 int main() {
     filesystem::path p = "dir";
 
-    filesystem::remove(p);
-
     cout << "Path: " << p << endl;
+
 
     if (filesystem::exists(p)) {
         cout << "Exists"; 
     }
     
+    for (const auto& entry:filesystem::directory_iterator(p)) {
+        cout << entry.path() << endl;
+    }
 }
