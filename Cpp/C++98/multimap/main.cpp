@@ -1,14 +1,15 @@
 #include <iostream>
 #include <map>
+#include <deque>
 
 using namespace std;
 
 int main() {
     multimap<string, string> orgFiles;
 
-    string file1 = "document,pdf";
-    string file2 = "image.jpg";
-    string file3 = "document2.pdf";
+    string extension;
+
+    deque<string> listFiles;
 
     orgFiles.insert({"Documents", file1});
     orgFiles.insert({"Images", file2});
