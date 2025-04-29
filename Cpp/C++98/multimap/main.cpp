@@ -1,21 +1,17 @@
 #include <iostream>
 #include <map>
 #include <deque>
+#include <filesystem>
 
 using namespace std;
+namespace fs = std::filesystem;
+
 
 int main() {
-    multimap<string, string> orgFiles;
+  fs::path path = "./files";
 
-    string extension;
-
-    deque<string> listFiles;
-
-    orgFiles.insert({"Documents", file1});
-    orgFiles.insert({"Images", file2});
-    orgFiles.insert({"Documents", file3});
-
-    for (auto file : orgFiles) {
-        cout << file.first << " is: " << file.second << endl;
-    }
+  for (const auto& entry:filesystem::directory_iterator(path)) {
+    cout << entry.path().string() << endl;
+    cout << entry.path().extension() << endl;
+  }
 }
