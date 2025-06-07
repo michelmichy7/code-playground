@@ -6,7 +6,6 @@ int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
     qmlRegisterType<contact>("ConnectLib", 1, 0, "Connect");
-
     QQmlApplicationEngine engine;
     QObject::connect(
         &engine,

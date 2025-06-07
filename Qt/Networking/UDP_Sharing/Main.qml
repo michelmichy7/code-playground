@@ -11,16 +11,46 @@ Window {
     Connect {
         id: connectUdp
     }
+
     Rectangle {
         anchors.fill: parent
         anchors.centerIn: parent
 
-        Button {
+        Text {
+            text: "Target IP address:"
+            anchors.horizontalCenter: parent.horizontalCenter
+            y: 150
+        }
+
+        Column {
+            spacing: 20
             anchors.centerIn: parent
-            text: "Start"
-            onClicked: {
-                connectUdp.connect()
+
+
+            TextField {
+                id: textField
+                objectName: targetIP
+                width: 130
+                height: 30
+                placeholderText: "192.xxx.xxx.xxx"
+                cursorVisible: true
+                anchors.horizontalCenter: parent.horizontalCenter
             }
+
+            Button {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: "Send"
+                onClicked: {
+                    connectUdp.send()
+                }
+            }
+            Button {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: "Receive"
+                onClicked: connectUdp.receive()
+
+            }
+
         }
     }
 }
