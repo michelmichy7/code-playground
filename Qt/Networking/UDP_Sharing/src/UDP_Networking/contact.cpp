@@ -6,16 +6,16 @@ contact::contact(QObject *parent)
     : QObject{parent}
 {}
 
-void contact::textFill(QObject *root)
+void contact::process()
 {
-    QObject *textField = m_root->findChild<QObject*>("targetIp");
-    qDebug() << textField;
+    qDebug() << "ip: " << m_text;
 }
 
 void contact::send()
 {
-    textFill(m_root);
-    /*socket = new QUdpSocket(this);
+    qDebug() << "S";
+    process();
+    socket = new QUdpSocket(this);
     QByteArray ipIn;
 
 
@@ -23,11 +23,13 @@ void contact::send()
 
     socket->bind(QHostAddress::AnyIPv4, 0, QUdpSocket::ShareAddress | QUdpSocket::ReuseAddressHint);
 
-    socket->writeDatagram(ipIn, QHostAddress::Broadcast, 45454);*/
+    socket->writeDatagram(ipIn, QHostAddress::Broadcast, 45454);
 }
 
 void contact::receive()
 {
     socket = new QUdpSocket(this);
 }
+
+
 

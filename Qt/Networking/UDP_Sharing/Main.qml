@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.Controls.Basic
-import ConnectLib 1.0
+//import ConnectLib 1.0
 
 
 Window {
@@ -8,9 +8,9 @@ Window {
     height: 500
     visible: true
 
-    Connect {
+    /*Connect {
         id: connectUdp
-    }
+    }*/
 
     Rectangle {
         anchors.fill: parent
@@ -29,20 +29,18 @@ Window {
 
             TextField {
                 id: textField
-                objectName: targetIP
                 width: 130
                 height: 30
                 placeholderText: "192.xxx.xxx.xxx"
                 cursorVisible: true
                 anchors.horizontalCenter: parent.horizontalCenter
+                onTextChanged: contact.text = text
             }
 
             Button {
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: "Send"
-                onClicked: {
-                    connectUdp.send()
-                }
+                onClicked: contact.send()
             }
             Button {
                 anchors.horizontalCenter: parent.horizontalCenter
