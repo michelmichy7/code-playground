@@ -1,0 +1,14 @@
+-rootPath
+/home/michal/git/code-playground/Qt/experimenting/connectQMLObject_toCpp
+-cmake-output
+-output-file
+/home/michal/git/code-playground/Qt/experimenting/connectQMLObject_toCpp/build/Desktop_Qt_6_9_0-Debug/.qt/qml_imports/appconnectQMLObject_toCpp_conf.cmake
+-importPath
+/home/michal/git/code-playground/Qt/experimenting/connectQMLObject_toCpp/build/Desktop_Qt_6_9_0-Debug/connectQMLObject_toCpp
+-importPath
+/home/michal/git/code-playground/Qt/experimenting/connectQMLObject_toCpp/build/Desktop_Qt_6_9_0-Debug
+-importPath
+/opt/Qt/6.9.0/gcc_64/qml
+-qrcFiles
+/home/michal/git/code-playground/Qt/experimenting/connectQMLObject_toCpp/build/Desktop_Qt_6_9_0-Debug/.qt/rcc/qmake_connectQMLObject_toCpp.qrc
+/home/michal/git/code-playground/Qt/experimenting/connectQMLObject_toCpp/build/Desktop_Qt_6_9_0-Debug/.qt/rcc/appconnectQMLObject_toCpp_raw_qml_0.qrc

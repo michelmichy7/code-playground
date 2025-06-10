@@ -1,0 +1,10 @@
+--bare
+-I
+/home/michal/git/code-playground/Qt/experimenting/connectQMLObject_toCpp/build/Desktop_Qt_6_9_0-Debug
+-I
+/opt/Qt/6.9.0/gcc_64/qml
+--resource
+/home/michal/git/code-playground/Qt/experimenting/connectQMLObject_toCpp/build/Desktop_Qt_6_9_0-Debug/.qt/rcc/qmake_connectQMLObject_toCpp.qrc
+--resource
+/home/michal/git/code-playground/Qt/experimenting/connectQMLObject_toCpp/build/Desktop_Qt_6_9_0-Debug/.qt/rcc/appconnectQMLObject_toCpp_raw_qml_0.qrc
+/home/michal/git/code-playground/Qt/experimenting/connectQMLObject_toCpp/Main.qml

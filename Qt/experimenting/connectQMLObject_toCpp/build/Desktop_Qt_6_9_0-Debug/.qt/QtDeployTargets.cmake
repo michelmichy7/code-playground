@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_appconnectQMLObject_toCpp_FILE /home/michal/git/code-playground/Qt/experimenting/connectQMLObject_toCpp/build/Desktop_Qt_6_9_0-Debug/appconnectQMLObject_toCpp)
+set(__QT_DEPLOY_TARGET_appconnectQMLObject_toCpp_TYPE EXECUTABLE)

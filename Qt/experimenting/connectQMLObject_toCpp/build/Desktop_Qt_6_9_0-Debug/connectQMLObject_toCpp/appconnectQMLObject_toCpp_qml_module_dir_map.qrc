@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="/qt/qml/connectQMLObject_toCpp">/home/michal/git/code-playground/Qt/experimenting/connectQMLObject_toCpp/build/Desktop_Qt_6_9_0-Debug/connectQMLObject_toCpp</file>
+
+  </qresource>
+</RCC>

@@ -1,0 +1,2 @@
+/home/michal/git/code-playground/Qt/experimenting/connectQMLObject_toCpp/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/edit_cache.dir
+/home/michal/git/code-playground/Qt/experimenting/connectQMLObject_toCpp/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/rebuild_cache.dir

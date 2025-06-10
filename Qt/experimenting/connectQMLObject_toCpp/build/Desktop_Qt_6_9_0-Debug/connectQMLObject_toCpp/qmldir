@@ -1,0 +1,5 @@
+module connectQMLObject_toCpp
+typeinfo appconnectQMLObject_toCpp.qmltypes
+prefer :/qt/qml/connectQMLObject_toCpp/
+Main 1.0 Main.qml
+
