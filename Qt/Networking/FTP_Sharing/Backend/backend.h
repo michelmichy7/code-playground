@@ -2,7 +2,7 @@
 #define BACKEND_H
 
 #include <QObject>
-#include <QudpSocket>
+#include <QTcpSocket>
 
 class Backend : public QObject
 {
@@ -19,7 +19,7 @@ signals:
     void textChanged(const QString &text);
 
 private:
-    QUdpSocket* socket = nullptr;
+    QTcpSocket* socket = nullptr;
     QString m_text;
 };
 

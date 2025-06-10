@@ -1,5 +1,5 @@
 import QtQuick
-import QtQuck.Controls.Basic
+import QtQuick.Controls
 
 Window {
     width: 640
@@ -8,12 +8,20 @@ Window {
     title: qsTr("Hello World")
 
     Rectangle {
-        Button {
-            text: "Send"
-            onClicked: backend.send()
+        TextField {
+            placeholderText: "Target IP Adress";
+            onTextChanged: backend.text = text
         }
-        Button {
-            text: "Get"
+
+        Column {
+            Button {
+                text: "Send"
+                onClicked: backend.send()
+            }
+            Button {
+                text: "Get"
+                onClicked: backend.receive()
+            }
         }
     }
 }
