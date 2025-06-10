@@ -3,13 +3,21 @@
 #include <QTcpSocket>
 Backend::Backend(QObject *parent)
     : QObject{parent}
-{}
-
-void Backend::send()
 {
     socket = new QTcpSocket(this);
 
-    socket->bind();
+    connect(socket, &QTcpSocket::readyRead, this, &Backend::onReadyRead);
+}
+
+void Backend::send()
+{
+    qDebug() << "C";
+    socket = new QTcpSocket(this);
+    QHostAddress ipHost(m_text);
+
+    socket->connectToHost(ipHost, 45454);
+
+    socket->write("Hello World");
 }
 
 void Backend::receive()
@@ -17,7 +25,3 @@ void Backend::receive()
 
 }
 
-void Backend::onReadyRead()
-{
-
-}

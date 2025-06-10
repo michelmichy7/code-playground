@@ -13,7 +13,6 @@ public:
     explicit Backend(QObject *parent = nullptr);
     Q_INVOKABLE void send();
     Q_INVOKABLE void receive();
-    void onReadyRead();
 
 signals:
     void textChanged(const QString &text);
@@ -21,6 +20,12 @@ signals:
 private:
     QTcpSocket* socket = nullptr;
     QString m_text;
+
+private slots:
+    void onReadyRead() {
+        QByteArray data = socket->readAll();
+        qDebug() << "Received: " << data;
+    }
 };
 
 #endif // BACKEND_H
