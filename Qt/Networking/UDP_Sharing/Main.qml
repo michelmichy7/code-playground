@@ -45,7 +45,7 @@ Window {
             Button {
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: "Receive"
-                onClicked: connectUdp.receive()
+                onClicked: contact.receive()
 
             }
 
