@@ -13,8 +13,9 @@ Backend::Backend(QObject *parent)
                 break;
             }
     });
-    connect(socket, &QTcpSocket::readyRead, this, [=]() {
-        QByteArray data = socket->readAll();
+    QTcpSocket* clientSocket = server->nextPendingConnection();
+    connect(clientSocket, &QTcpSocket::readyRead, this, [clientSocket](){
+        QByteArray data = clientSocket->readAll();
         qDebug() << "Received: " << data;
     });
 }

@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QTcpSocket>
+#include <QTcpServer>
 
 class Backend : public QObject
 {
@@ -19,13 +20,13 @@ signals:
     void textChanged(const QString &text);
 
 private:
-    QTcpSocket *socket = new QTcpSocket(this);
+    QTcpServer *server = new QTcpServer(this);
     QString m_text;
     QTcpSocket *rSocket = new QTcpSocket(this);
 
 private slots:
     void onReadyRead() {
-        QByteArray data = socket->readAll();
+        QByteArray data = server->readAll();
         qDebug() << "Received: " << data;
     }
     void connectToServer() {
