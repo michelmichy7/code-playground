@@ -22,7 +22,7 @@ Window {
             Button {
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: "Send"
-                onClicked: backend.send()
+                onClicked: backend.startServer()
                 onTextChanged: backend.text = text
             }
             Button {
@@ -30,6 +30,11 @@ Window {
                 text: "Get"
                 onClicked: backend.receive()
                 onTextChanged: backend.text = text
+            }
+            Button {
+                text : "Send Hello World";
+                anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: backend.sendData()
             }
         }
     }
