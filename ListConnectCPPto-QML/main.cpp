@@ -1,5 +1,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include "DListModel.h"
+#include <QQmlContext>
 
 int main(int argc, char *argv[])
 {
@@ -7,6 +9,8 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/ListConnectCPPto-QML/Main.qml"));
+    DListModel model;
+    engine.rootContext()->setContextProperty("myModel", &model);
     QObject::connect(
         &engine,
         &QQmlApplicationEngine::objectCreated,
