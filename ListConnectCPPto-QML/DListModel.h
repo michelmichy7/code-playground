@@ -11,8 +11,15 @@ public:
     explicit DListModel(QObject *parent = nullptr)
         : QStringListModel(parent)
     {
+        setStringList(QStringList({"Apple", "Pineapple", "s"}));
 
-        setStringList({"Apple", "Pineapple"});
+
+        }        QHash<int, QByteArray> roleNames() const override {
+            QHash<int, QByteArray> roles;
+            roles[Qt::DisplayRole] = "display";  // Standard role
+            roles[Qt::EditRole] = "edit";        // Standard role
+            roles[Qt::UserRole] = "modelData";   // Commonly used in QML
+            return roles;
     }
 };
 
