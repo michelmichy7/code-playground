@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     const QUrl url(QStringLiteral("qrc:/ListConnectCPPto-QML/Main.qml"));
     DListModel model;
     engine.rootContext()->setContextProperty("myModel", &model);
-    QObject::connect(
+        QObject::connect(
         &engine,
         &QQmlApplicationEngine::objectCreated,
         &app,

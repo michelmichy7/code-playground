@@ -1,4 +1,6 @@
 import QtQuick
+import QtQuick.Controls
+
 
 Window {
     width: 640
@@ -7,15 +9,28 @@ Window {
     title: qsTr("Hello World")
 
     Grid {
-        width: 200; height: 300;
         anchors.centerIn: parent
         spacing: 20
         Repeater {
             model: myModel
-        delegate:
-                Rectangle {
-                width: 50; height: 50
-                color: "black"
+            delegate:
+                Button {
+                    width: 100; height: 100
+                    background: Rectangle {
+                        anchors.fill: parent
+                        color: "black"
+                    }
+                    onClicked: {
+                        myModel.handleItemClick(index)
+                    }
+                    Text {
+                        z: 3
+                        color: "white"
+                        anchors.centerIn: parent
+                        text: model.display
+
+                    }
+
                 }
         }
         }

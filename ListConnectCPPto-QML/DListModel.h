@@ -12,15 +12,9 @@ public:
         : QStringListModel(parent)
     {
         setStringList(QStringList({"Apple", "Pineapple", "s"}));
-
-
-        }        QHash<int, QByteArray> roleNames() const override {
-            QHash<int, QByteArray> roles;
-            roles[Qt::DisplayRole] = "display";  // Standard role
-            roles[Qt::EditRole] = "edit";        // Standard role
-            roles[Qt::UserRole] = "modelData";   // Commonly used in QML
-            return roles;
     }
+    Q_INVOKABLE void handleItemClick(int index);
+
 };
 
 #endif // DLISTMODEL_H
