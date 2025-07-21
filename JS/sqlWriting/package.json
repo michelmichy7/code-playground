@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "mariadb": "^3.4.4",
+    "prompt-sync": "^4.2.0"
+  }
+}
